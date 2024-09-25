@@ -26,27 +26,27 @@ import { Manager } from "socket.io-client";
 
 // }
 
-function InfiniteFrameRenderer() {
-  const [frameKey, setFrameKey] = useState(0);
+// function InfiniteFrameRenderer() {
+//   const [frameKey, setFrameKey] = useState(0);
 
-  useEffect(() => {
-    // 1초마다 key를 변경하여 Frame을 다시 렌더링
-    const interval = setInterval(() => {
-      setFrameKey(prevKey => prevKey + 1);
-    }, 10); // 1000ms = 1초
+//   useEffect(() => {
+//     // 1초마다 key를 변경하여 Frame을 다시 렌더링
+//     const interval = setInterval(() => {
+//       setFrameKey(prevKey => prevKey + 1);
+//     }, 10); // 1000ms = 1초
 
-    // 컴포넌트 언마운트 시 타이머 정리
-    return () => clearInterval(interval);
-  }, []);
+//     // 컴포넌트 언마운트 시 타이머 정리
+//     return () => clearInterval(interval);
+//   }, []);
 
-  return (
-    <div>
-      <Frame key={frameKey} /> {/* key를 변경하면 컴포넌트가 리렌더링됨 */}
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <Frame key={frameKey} /> {/* key를 변경하면 컴포넌트가 리렌더링됨 */}
+//     </div>
+//   );
+// }
 
-const ws = new WebSocket("ws://localhost:8080/socket");
+const ws = new WebSocket("ws://localhost:8080/api/socket");
 function ShowCCTV() {
   const [frameSrc, setFrameSrc] = useState(null);
  

@@ -138,6 +138,7 @@
     <ClCompile Include="homography.cpp" />
     <ClCompile Include="inference.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="RTSPStreaming.cpp" />
     <ClCompile Include="WebSocketSender.cpp" />
     <ClCompile Include="yolo_test.cpp" />
   </ItemGroup>
@@ -145,6 +146,7 @@
     <ClInclude Include="DistanceMeasurement.h" />
     <ClInclude Include="HeadDetector.h" />
     <ClInclude Include="inference.h" />
+    <ClInclude Include="RTSPStreaming.h" />
     <ClInclude Include="WebSocketSender.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

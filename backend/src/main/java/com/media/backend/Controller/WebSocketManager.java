@@ -40,13 +40,13 @@ public class WebSocketManager {
         System.out.println("Closed : " + session);
     }
 
-    public void sendFrame() throws IOException {
+    public void sendFrame(int cameraId) throws IOException {
 //        LOGGER.info("sending Frame");
 
         for(Session client : CLIENTS) {
             try {
                 synchronized (client) {
-                    client.getBasicRemote().sendBinary(ByteBuffer.wrap(UdpInboundMessageHandler.camera_data_assembled[0]));
+                    client.getBasicRemote().sendBinary(ByteBuffer.wrap(UdpInboundMessageHandler.camera_data_assembled[cameraId]));
                 }
             } catch (IOException e) {
                 e.printStackTrace();

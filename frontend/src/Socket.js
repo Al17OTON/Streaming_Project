@@ -1,6 +1,6 @@
 import { Manager, Manager } from "socket.io-client";
 
-const manager = new Manager("ws://localhost:8080", {
+const manager = new Manager("ws://localhost:8080/api", {
     autoConnect : false
 });
 

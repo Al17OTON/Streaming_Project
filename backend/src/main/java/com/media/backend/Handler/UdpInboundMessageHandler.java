@@ -6,24 +6,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.integration.annotation.MessageEndpoint;
 import org.springframework.integration.annotation.ServiceActivator;
-import org.springframework.integration.support.MessageBuilder;
 import org.springframework.messaging.Message;
-import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.handler.annotation.Headers;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Map;
-import java.util.UUID;
 
 @MessageEndpoint
 public class UdpInboundMessageHandler {
 
     @Autowired
-    private WebSocketManager wsn;
+    private WebSocketManager wsm;
     private final static Logger LOGGER = LoggerFactory.getLogger(UdpInboundMessageHandler.class);
     
     //미리 공간을 열어놓기 640*480 크기의 jpg를 테스트해본결과 약 60000 바이트가 나올때가 있고 20000만 바이트가 될때가 있다.
@@ -56,7 +50,7 @@ public class UdpInboundMessageHandler {
 //            BufferedImage image = ImageIO.read(img_bis);
 //            ImageIO.write(image, "jpg", new java.io.File("received_image.jpg"));
             LOGGER.info("JPG received");
-            wsn.sendFrame();
+            wsm.sendFrame(cameraId);
         }
 
     }
