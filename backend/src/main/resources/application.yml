@@ -1,0 +1,16 @@
+udp:
+  channel: inboundChannel
+  task-executor:
+    queue-capacity: '40'
+    max-pool-size: '100'
+    core-pool-size: '10'
+  port: '5432'
+spring:
+  application:
+    name: backend
+server:
+  servlet:
+    context-path: /
+react:
+  server:
+    address: http://localhost:3000/
